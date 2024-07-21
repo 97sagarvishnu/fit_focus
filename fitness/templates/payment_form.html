@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+</head>
+<body>
+    <h1>Enter Payment Details</h1>
+    <form method="post" action="{% url 'payment_view' %}">
+        {% csrf_token %}
+        Amount: <input type="text" name="amount" required><br>
+        Payment Method:
+        <select name="payment_method" required>
+            <option value="card">Card</option>
+             <option value="upi">UPI</option> 
+         </select><br>
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html> 
